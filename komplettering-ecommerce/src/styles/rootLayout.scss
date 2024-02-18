@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+}
+$spacing-xs: 0.4rem;
+$spacing-s: 0.6rem;
+$spacing-m: 0.8rem;
+$spacing-l: 1rem;
+$spacing-xl: 1.2rem;
+$spacing-xxl: 1.5rem;
+
+$border-color: rgba(45, 55, 75, 0.266);
+$form-background: rgba(200, 205, 224, 0.365);
+
+.wrapper-root{
+    height: 100vh;
+    font-family: monospace;
+}
+.wrapper-login{
+    height: 100vh;
+    background-color: pink;
+    font-family: monospace;
+}
+
+// HEADER COMPONENT
+
+header{
+    display: grid;
+    position: relative;
+    grid-template-columns: 4fr 2fr 1fr;
+    padding: 2rem;
+    a{
+        width: fit-content;
+    }
+    .navbar>*{
+        margin: $spacing-s;
+    }
+    .side-login-cart>*{
+        margin: $spacing-s;
+    }
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        box-shadow: 0 2px 1px 1px $border-color;
+    }
+}
+
+// ARTICLE 
+
+article{
+    text-align: center;
+    padding: 1rem;
+}
+
+// HOME PAGE 
+
+.product-list-grid{
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100vw;
+    .product-box{
+        cursor: pointer;
+        margin: $spacing-xl;
+        padding: $spacing-m;
+        border: 1px solid $border-color;
+        transition: 250ms;
+        img{
+            width: 100%;
+        }
+        &:hover{
+            transform: scale(1.02);
+        }
+    }
+}
+
+// PRODUKT SIDAN 
+
+    .product-description-box{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        flex-wrap: wrap;
+        .product-title{
+            font-size:xx-large;
+            flex-grow: 1;
+            padding: 1rem;
+            justify-self: center;
+        }
+        .product-content{
+            display: flex;
+            .product-description,
+            .product-image{
+                padding: $spacing-m;
+                flex: 1;
+                max-width: 50%;
+            }
+            .product-image{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .product-price{
+            font-size: medium;
+        }
+    }
+
+    // FORM 
+    .form-justify{
+        display: grid;
+        justify-content: center;
+    }
+    .form-style{
+        background-color: $form-background;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px 2px $border-color;
+        .main-error{
+            background-color: rgba(242, 32, 32, 0.724);
+        }
+    }
+
+    .form-group{
+        padding: .3rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;   
+    }
+    .main-error{
+        background-color: rgba(128, 23, 0, 0.535);
+        padding: .2rem;
+        border-radius: 3px;
+    }
+    .success-message{
+        background-color: rgba(0, 128, 0, 0.535);
+        padding: .2rem;
+        border-radius: 3px;
+    } 
+    .form-modal{
+        position: fixed;
+        margin: auto;
+    background-color: rgba(56, 55, 55, 0.312);
+    border: none;
+    .form-modal-style{
+        place-self: center;
+        background-image: linear-gradient(rgb(255, 0, 0), rgb(200, 196, 196));
+        padding: 4rem;
+        button{
+            place-self: center;
+        }
+    }
+    }
+    .invalid-input{
+        color: red;
+        text-shadow: -1px 1px black;
+    }
+    
+    
+    .shopping-cart-sidebar{
+        position: fixed;
+        right: 0;
+        top: calc(10vw - 3rem);
+        height: 80vh;
+        padding: 2rem;
+        background-color: white;
+        border-left: 1px solid;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        z-index: 1000;
+    }
+    
+    .confirm-message{
+        color: green;
+        text-shadow: -1px 1px black;
+    }
+    
+    // FOOTER 
