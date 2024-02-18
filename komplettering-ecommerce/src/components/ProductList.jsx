@@ -14,10 +14,6 @@ function ProductList ({ products }) {
     function productHandler(productId){
         navigate(`/products/${productId}`)
     }
-    useEffect(() => {
-        console.log(filter)
-    })
-
     return <>
     <div className='product-list-grid'>
         <CategoryChooser onCategorySelect={setFilter}/>
