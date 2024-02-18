@@ -165,4 +165,19 @@ article {
 .confirm-message {
   color: green;
   text-shadow: -1px 1px black;
+}
+
+.category-container {
+  grid-column: 1/-1;
+  padding: 1rem 2rem 0 2rem;
+}
+.category-container ul {
+  justify-content: center;
+  display: flex;
+  list-style: none;
+}
+.category-container ul li {
+  cursor: pointer;
+  margin: 0.8rem 2rem 0 2rem;
+  width: 5vw;
 }/*# sourceMappingURL=rootLayout.css.map */

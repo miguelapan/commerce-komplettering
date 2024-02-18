@@ -177,5 +177,17 @@ article{
         color: green;
         text-shadow: -1px 1px black;
     }
-    
-    // FOOTER 
+    .category-container{
+        grid-column: 1/-1;
+        padding: 1rem 2rem 0 2rem;
+        ul{
+            justify-content: center;
+            display: flex;
+            list-style: none;
+            li{
+                cursor: pointer;
+                margin: .8rem 2rem 0 2rem;
+                width: 5vw;
+            }
+        }
+    }

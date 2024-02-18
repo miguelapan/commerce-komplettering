@@ -1,22 +1,28 @@
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import ProductBox from './ProductBox';
+import CategoryChooser from './CategoryChooser'
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-function ProductList ({ products, selectedCategory }) {
+
+function ProductList ({ products }) {
+
+    const [filter, setFilter] = useState(null)
 
     const navigate = useNavigate();
 
     function productHandler(productId){
         navigate(`/products/${productId}`)
     }
+    useEffect(() => {
+        console.log(filter)
+    })
 
     return <>
     <div className='product-list-grid'>
-    {products && products
-    .map((product) =>  (
-                <ProductBox key={product._id} product={product} productHandler={productHandler}/>
-            )
-        )}
+        <CategoryChooser onCategorySelect={setFilter}/>
+    {products && <ProductBox products={products} productHandler={productHandler} setFilter={filter}/>
+         }
         </div>
     </>
 }
